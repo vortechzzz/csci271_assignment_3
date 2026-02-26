@@ -57,6 +57,27 @@ public class CSCI271_Assignment_3_Q1_ZachAllman
 		//Displays the length using the recursion function
 		int length = recursionLength(uString);
 		System.out.println(uString + " Length is: " + length);
+
+
+		//Test Cases:
+		System.out.println(" *** Test Cases: ***");
+
+		//Test Case 1: Empty string
+		String test1 = "";
+		System.out.println(test1 + " Length is: " + recursionLength(test1));
+
+		//Test Case 2: One character + check if a number works
+		String test2 = "1";
+		System.out.println(test2 + " Length is: " + recursionLength(test2));
+
+		//Test Case 3: String with mutliple spaces to check if spaces are counted as characters
+		String test3 = "S p a c e";
+		System.out.println(test3 + " Length is: " + recursionLength(test3));
+
+		//Test Case 4: String that has special characters in it to verify if special characters are counted
+		String test4 = "!@#$%^&*()";
+		System.out.println(test4 + " Length is: " + recursionLength(test4));
 	}
+
 }
 
