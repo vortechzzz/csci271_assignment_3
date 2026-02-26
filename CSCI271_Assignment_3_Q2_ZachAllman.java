@@ -32,5 +32,43 @@
 ********************************************************************/
 import java.util.Scanner;
 
-public class CSCI271_Assignment3_Q2_ZachAllman
+public class CSCI271_Assignment_3_Q2_ZachAllman
 {
+	public static int charCount(String s, char c)
+	{
+		//Base Case: If the string is empty, nothing will be counted
+		if (s.equals(""))
+		{
+			return 0;
+		}
+
+		//This checks to see if the first character matches c
+		int match = 0;
+
+		if (s.charAt(0) == c)
+		{
+			match = 1;
+		}
+
+		//Recursive Case: Returns match and counts in the rest of the string
+		return match + charCount(s.substring(1), c);
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+
+		//Reads input from the user
+		System.out.print("Enter a string: ");
+		String uString = input.nextLine();
+
+		//Reads character from the user
+		System.out.print("Enter a character to be counted: ");
+		char uChar = input.nextLine().charAt(0);
+
+		//Display the count using recursion function
+		int count = charCount(uString, uChar);
+		System.out.println(uChar + " shows up " + count + " times in the string: " + uString);
+
+	}
+}
