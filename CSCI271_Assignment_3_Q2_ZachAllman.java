@@ -70,5 +70,34 @@ public class CSCI271_Assignment_3_Q2_ZachAllman
 		int count = charCount(uString, uChar);
 		System.out.println(uChar + " shows up " + count + " times in the string: " + uString);
 
+		//Test Cases:
+		System.out.println("*** Test Cases ***");
+
+		//Test Case 1: Check to see if the character not in the string gets counted
+		String test1 = "Green Bay";
+		char char1 = 'z';
+		System.out.println(char1 + " shows up " + charCount(test1, char1) + " times in the string: " + test1);
+
+		//Test Case 2: Character shows up more than once + shows if case matters
+		String test2 = "Alaska";
+		char char2 = 'a';
+		System.out.println(char2 + " shows up " + charCount(test2, char2) + " times in the string: " + test2);
+
+		//Test Case 3: Empty string
+		String test3 = "";
+		char char3 = 'b';
+		System.out.println(char3 + " shows up " + charCount(test3, char3)  + " times in the string: " + test3);
+
+		//Test Case 4: String is a single character and checks if that single character matches
+		String test4 = "u";
+		char char4 = 'u';
+		System.out.println(char4 + " shows up " + charCount(test4, char4) + " times in the string: " + test4);
+
+		//Test Case 5: All characters in the string match
+		String test5 = "ooooo";
+		char char5 = 'o';
+		System.out.println(char5 + " shows up " + charCount(test5, char5) + " times in the string: " + test5);
+
+		input.close();
 	}
 }
