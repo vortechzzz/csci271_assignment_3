@@ -31,5 +31,62 @@
 ********************************************************************/
 import java.util.Scanner;
 
-public class CSCI271_Assignment3_Q3_ZachAllman
+public class CSCI271_Assignment_3_Q3_ZachAllman
 {
+
+	public static int max(int[] A, int index)
+	{
+		//Base Case: Last element in the array
+		if(index == A.length - 1)
+		{
+			return A[index];
+		}
+
+		//Recursion Case: Finds the max in the rest of the array
+		int maxInArray = max(A, index + 1);
+
+		//Returns the larger of the current element and max of rest
+		if (A[index] > maxInArray)
+		{
+			return A[index];
+		}
+
+		else
+		{
+			return maxInArray;
+		}
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+
+		System.out.println("Type how many integers you want to enter: ");
+		int n = input.nextInt();
+
+		//Reads input from the user and puts integers in array
+		int[] A = new int[n];
+		for (int i = 0; i < n; i++)
+		{
+			System.out.println("Enter integer: " + (i + 1) + ": ");
+			A[i] = input.nextInt();
+		}
+
+		//Show the array
+		System.out.print("Array: [");
+		for (int i = 0; i < A.length; i++)
+		{
+			System.out.print(A[i]);
+			if (i < A.length - 1)
+			{
+				System.out.print(", ");
+			}
+		}
+		System.out.println("]");
+
+		//Finds and displays the maximum using recursion function
+		int maximum = max(A, 0);
+		System.out.println("Max value: " + maximum);
+	}
+
+}
