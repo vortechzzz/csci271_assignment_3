@@ -32,5 +32,31 @@
 ********************************************************************/
 import java.util.Scanner;
 
-public class CSCI271_Assignment3_Q1_ZachAllman
+public class CSCI271_Assignment_3_Q1_ZachAllman
 {
+	public static int recursionLength(String s)
+	{
+		//Base Case: If the string is empty, then the length will = 0
+		if (s.equals(""))
+		{
+			return 0;
+		}
+
+		//Recursive Case: Returns 1 and the length of string without the first character
+		return 1 + recursionLength(s.substring(1));
+	}
+
+	public static void main(String[] args)
+	{
+		Scanner input = new Scanner(System.in);
+
+		//Read the input from the user
+		System.out.print("Enter a string: " );
+		String uString = input.nextLine();
+
+		//Displays the length using the recursion function
+		int length = recursionLength(uString);
+		System.out.println(uString + " Length is: " + length);
+	}
+}
+
